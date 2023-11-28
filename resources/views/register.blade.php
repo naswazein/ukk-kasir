@@ -9,10 +9,9 @@
 </head>
 <body>
     <div class="form-container">
-        <form method="post">
+        <form class="post" action={{ url('/register') }} method="POST">
             @method("POST")
             @csrf
-        <form action="prosesregister.php" method="post">
             <h3>Register Now</h3>
             <input type="text" name="nik" required placeholder="enter your nik">
             <br>

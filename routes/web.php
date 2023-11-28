@@ -8,14 +8,15 @@ use App\http\Controllers\AuthControll;
 Route::get('/login', [Controller::class, 'login']);
 Route::post('/login', [Controller::class, 'proseslogin']);
 
+//register
+Route::get('/register', [Controller::class, 'register']);
+Route::post('/register', [Controller::class, 'register']);
+
 // Route::get('/welcome', function () {
 //     return view('welcome'); //menampilkan file welcome di views
 // });
 
 // Route::get('/login', [Controller::class, 'login']);
-
-Route::get('/register', [Controller::class, 'register']);
-Route::post('/register', [Controller::class, 'store']);
 
 // Route::get('/register', function () {
 //     return view ("register");
