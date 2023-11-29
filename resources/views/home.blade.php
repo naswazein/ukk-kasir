@@ -9,6 +9,14 @@
 </head>
 <body>
     @include('layouts.navbar')
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<center><h1>assalamualaikum</h1></center>
+
 
 </body>
 </html>
