@@ -15,6 +15,10 @@ class logincontroller extends Controller
         return view("/login" , ['login'=>$login]);
     }
     function proseslogin(Request $request){
+        $request->validate([
+            'login' => 'required|min:2'
+           ]);
+
     $datalogin = $request->only("username" , "password"); //buat ambil data
     if (Auth::attempt($datalogin))
      { //proses login

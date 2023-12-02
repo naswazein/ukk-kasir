@@ -13,7 +13,11 @@ class AuthControll extends Controller
     function register(){
         return view('register');
     }
+
     function store(Request $request){
+        $request->validate([
+            'register' => 'required|min:2'
+           ]);
         var_dump($request->all());
         //masukan data
 
