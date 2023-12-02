@@ -22,7 +22,7 @@
             <br>
             <br>
             <input type="submit" name="submit" value="login now" class="form-btn">
-            <p>don't have account yet? <a href="register.php">register now</a></p>
+            <p>don't have account yet? <a href="register">register now</a></p>
         </form>
     </div>
 </body>

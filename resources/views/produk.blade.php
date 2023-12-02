@@ -7,30 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{$judul}}</h1>
      @include('layouts.navbar')
     <div class="container">
     <table class="table">
       <thead>
+        <br>
         <tr>
-            <th scope="col">produk id</th>
-            <th scope="col">Nama Produk</th>
-            <th scope="col">Harga</th>
-            <th scope="col">Stok</th>
+            <th scope="col" class="table-danger">Nama Produk</th>
+            <th scope="col" class="table-danger">Harga</th>
+            <th scope="col" class="table-danger">Stok</th>
+            <th scope="col" class="table-danger">Opsi</th>
         </tr>
       </thead>
-      @foreach($pengaduan as $data)
+      @foreach($produk as $produk)
         <tbody>
         <tr>
-            <td class="table-success">ProdukID</td>
-            <td class="table-danger">NamaProduk</td>
-            <td class="table-warning">Harga</td>
-            <td class="table-info">Stok</td>
-        </tr>
+            <td class="table-info">{{$produk->NamaProduk}}</td>
+            <td class="table-info">{{$produk->Harga}}</td>
+            <td class="table-info">{{$produk->Stok}}</td>
+
         <td>
-            <a href={{url("/hapus-pengaduan/$data->id_pengaduan")}}>Delete</a>
-            <a href={{url("/detail-pengaduan/$data->id_pengaduan")}}">Detail</a>
-            <a href={{url("/update/$data->id_pengaduan")}}">Update</a>
+            <a type="button"class="btn btn-danger" href={{url("/delete/$produk->ProdukID")}}>Delete</a>
+            <a type="button"class="btn btn-succes" href={{url("/tambah/$produk->ProdukID")}}>Tambah</a>
+            {{-- <a type="button"class="btn btn-succes" href={{url("/delete/$produk->ProdukID")}}>Update</a> --}}
             </td
             </form>
           </td>
