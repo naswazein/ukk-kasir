@@ -7,44 +7,47 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class logincontroller extends Controller
+class produkcontroller extends Controller
 {
     function deleteproduk($id){
         $deleted=DB::table('produk')->where('ProdukID', $id)->delete();
         if($deleted){
            return redirect()->back();
         }
+    }
+    function prosesproduk()
+    {
+        $isi = "Tambah Produk";
 
-    function prosesproduk(Request $request)
+        return view('tambahproduk', ['isi' => $isi]);
+    }
+    function tambahproduk(Request $request)
     {
      //validasi
-     $request->validate();
+    // $request->validate();
     // return Auth::user();
     // $isipengaduan = $request->isilaporan;
-    $tambahproduk = $request->tambahproduk;
+    $tambahproduk = $request->NamaProduk;
+    $tambahharga = $request->Harga;
+    $tambahstok = $request->Stok;
 
     DB::table('produk')->insert([
-        'ProdukID' => Auth::user()->ID,
-        'NamaProduk' => Auth::user()->ID,
-        'Harga' => $tambahproduk,
-        'foto' => $request->foto->getClientOriginalName(),
-        'Stok' => '0'
+        'NamaProduk' => $tambahproduk,
+        'Harga' => $tambahharga,
+        'Stok' => $tambahstok,
     ]);
-// return redirect('/tampilpengaduan');
-}
+// return redirect('/tampilproduk');
+    }
+    function update_produk(Request $request, $id){
 
+        //return;
+        $stok = $request->stok;
 
-    function tampilpelanggan()
-    {
-        $judul = "Selamat Datang";
-        $produk = DB::table('pelanggan')->get();
+        DB::table('produk')
+        ->where('ProdukID' , $id)
+        ->update(['produk' => $stok]);
 
-        $pelanggan = DB::where('id' , Auth::user()->id)->get();
-        // return view('datapelanggan' , ['judul' => $judul, 'pelanggan' => $pelanggan]);
-        }
-    //      function tampilpelanggan()
-    //  {
-    //     echo "Tampillll";
-    //   }
+    return redirect('/tampilproduk');
     }
 }
+

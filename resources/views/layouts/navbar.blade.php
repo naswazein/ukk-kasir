@@ -34,12 +34,12 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{{url('produk')}}">Data Produk</a></li>
-                <li><a class="dropdown-item" href="{{url('datapelanggan')}}">Data Pelanggan</a></li>
-                <li><a class="dropdown-item" href="#">Data Penjualan</a></li>
+                <li><a class="dropdown-item" href="{{url('pelanggan')}}">Data Pelanggan</a></li>
+                <li><a class="dropdown-item" href="{{url('penjualan')}}">Data Penjualan</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="{{url('penjualan')}}">Something else here</a></li>
               </ul>
             </li>
           </ul>

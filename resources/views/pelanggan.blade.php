@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{$judul}}</h1>
      @include('layouts.navbar')
     <div class="container">
     <table class="table">
@@ -17,6 +16,7 @@
             <th scope="col" class="table-danger">Nama</th>
             <th scope="col" class="table-danger">Alamat</th>
             <th scope="col" class="table-danger">No Telp</th>
+            <th scope="col" class="table-danger">Opsi</th>
         </tr>
       </thead>
       @foreach($pelanggan as $pelanggan)
@@ -25,14 +25,13 @@
             <td class="table-info">{{$pelanggan->NamaPelanggan}}</td>
             <td class="table-info">{{$pelanggan->Alamat}}</td>
             <td class="table-info">{{$pelanggan->NomorTelepon}}</td>
-        </tr>
-        {{-- <td>
-            <a href={{url("/hapus-pengaduan/$data->id_pengaduan")}}>Delete</a>
-            <a href={{url("/detail-pengaduan/$data->id_pengaduan")}}">Detail</a>
-            <a href={{url("/update/$data->id_pengaduan")}}">Update</a>
-            </td
+          <td>
+            <a type="button"class="btn btn-danger" href={{url("/delete/$pelanggan->PelangganID")}}>Delete</a>
+            <a type="button"class="btn btn-primary" href={{url("/tambahpelanggan/$pelanggan->PelangganID")}}>Tambah</a>
+            <a type="button"class="btn btn-success" href={{url("/update/$pelanggan->PelangganID")}}>Update</a>
+          </td
             </form>
-          </td> --}}
+          </td>
         </tbody>
       @endforeach
     </table>

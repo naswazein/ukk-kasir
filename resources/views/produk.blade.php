@@ -28,8 +28,8 @@
 
         <td>
             <a type="button"class="btn btn-danger" href={{url("/delete/$produk->ProdukID")}}>Delete</a>
-            <a type="button"class="btn btn-succes" href={{url("/tambah/$produk->ProdukID")}}>Tambah</a>
-            {{-- <a type="button"class="btn btn-succes" href={{url("/delete/$produk->ProdukID")}}>Update</a> --}}
+            <a type="button"class="btn btn-primary" href={{url("/tambah/$produk->ProdukID")}}>Tambah</a>
+            <a type="button"class="btn btn-success" href={{url("/updateproduk/$produk->ProdukID")}}>Update</a>
             </td
             </form>
           </td>
