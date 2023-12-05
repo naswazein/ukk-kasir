@@ -16,16 +16,17 @@ class logincontroller extends Controller
     }
     function proseslogin(Request $request){
         $request->validate([
-            'login' => 'required|min:2'
+            'username' => 'required|min:2',
+            'password' => 'required|min:2'
            ]);
 
     $datalogin = $request->only("username" , "password"); //buat ambil data
     if (Auth::attempt($datalogin))
      { //proses login
-        //return "berhasil";
+        // return "berhasil";
         return redirect('/home');
-    // }else{
-       // return "gagal";
+    }else{
+    //    return "gagal";
         return redirect('/login')->with("error", "username atau password salah");
     }
 }

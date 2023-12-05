@@ -22,10 +22,11 @@ class pelanggancontroller extends Controller
         // {
         //  echo "Tampillll";
         // }
-}
         function deletepelanggan($id){
             $deleted=DB::table('pelanggan')->where('PelangganID', $id)->delete();
             if($deleted){
             return redirect()->back();
             }
+}
+
 }

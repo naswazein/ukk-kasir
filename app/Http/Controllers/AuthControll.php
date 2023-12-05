@@ -18,7 +18,7 @@ class AuthControll extends Controller
         $request->validate([
             'register' => 'required|min:2'
            ]);
-        var_dump($request->all());
+        // var_dump($request->all());
         //masukan data
 
         $data = DB::table("user")->insert([
@@ -29,7 +29,6 @@ class AuthControll extends Controller
             'user' => 'admin'
         ]);
         return redirect('/login');
-
     }
 }
 

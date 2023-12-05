@@ -8,7 +8,7 @@
     <title>Update Produk</title>
 </head>
 <body>
-    <form action={{ url("/update/$produk->ProdukID") }} method="POST" enctype="multipart/form-data"
+    <form action={{ url("/updateproduk/$produk->ProdukID") }} method="POST" enctype="multipart/form-data"
         @method('POST')
         @csrf
         <div class="container">
@@ -32,8 +32,8 @@
                 <div>{{ $message }}</div>
             @enderror
             <label for="exampleFormControlTextarea1" class="form-label">Stok</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Stok" required>{{ $produk->Stok }}</textarea>
-            @error('Stok')
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="stok" required>{{ $produk->Stok }}</textarea>
+            @error('stok')
                 <div>{{ $message }}</div>
             @enderror
 

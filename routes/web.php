@@ -22,7 +22,7 @@ Route::post('/login', [logincontroller::class, 'proseslogin']);
 //DATA PRODUK
 Route::get('/produk', [Controller::class, 'tampilproduk']);
 Route::get('/delete/{id}', [produkcontroller::class, 'deleteproduk']);
-Route::get('/tambah', [produkcontroller::class, 'prosesproduk']);
+Route::get('/produk/tambah', [produkcontroller::class, 'prosesproduk']);
 Route::post('/tambah', [produkcontroller::class, 'tambahproduk']);
 Route::post('/updateproduk/{id}', [produkcontroller::class, 'proses_update_produk']);
 Route::get('/updateproduk/{id}', [produkcontroller::class, 'update_produk']);
@@ -32,8 +32,8 @@ Route::get('/pelanggan', [pelanggancontroller::class, 'tampilpelanggan']);
 Route::get('/delete/{id}', [pelanggancontroller::class, 'deletepelanggan']);
 Route::get('/tambah', [pelanggancontroller::class, 'tambahpelanggan']);
 Route::post('/tambah', [pelanggancontroller::class, 'prosespelanggan']);
-// Route::post('/update/{id}', [pelanggancontroller::class, 'proses_update_pelanggan']);
-// Route::get('/update/{id}', [pelanggancontroller::class, 'update_pelanggan']);
+Route::post('/update/{id}', [pelanggancontroller::class, 'proses_update_pelanggan']);
+Route::get('/update/{id}', [pelanggancontroller::class, 'update_pelanggan']);
 
 //DATA PENJUALAN
 Route::get('/penjualan', [penjualancontroller::class, 'tampilpenjualan']);

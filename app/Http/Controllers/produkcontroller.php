@@ -38,14 +38,17 @@ class produkcontroller extends Controller
     ]);
 // return redirect('/tampilproduk');
     }
+
+
+
     function update_produk(Request $request, $id){
 
-        //return;
+        return $request;
         $stok = $request->stok;
 
         DB::table('produk')
         ->where('ProdukID' , $id)
-        ->update(['produk' => $stok]);
+        ->update(['stok' => $stok]);
 
     return redirect('/tampilproduk');
     }
