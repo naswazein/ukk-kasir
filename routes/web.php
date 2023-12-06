@@ -21,24 +21,24 @@ Route::post('/login', [logincontroller::class, 'proseslogin']);
 
 //DATA PRODUK
 Route::get('/produk', [Controller::class, 'tampilproduk']);
-Route::get('/delete/{id}', [produkcontroller::class, 'deleteproduk']);
+Route::get('produk/delete/{id}', [produkcontroller::class, 'deleteproduk']);
 Route::get('/produk/tambah', [produkcontroller::class, 'prosesproduk']);
-Route::post('/tambah', [produkcontroller::class, 'tambahproduk']);
+Route::post('/produk/tambah', [produkcontroller::class, 'tambahproduk']);
 Route::post('/updateproduk/{id}', [produkcontroller::class, 'proses_update_produk']);
 Route::get('/updateproduk/{id}', [produkcontroller::class, 'update_produk']);
 
 //DATA PELANGGAN
 Route::get('/pelanggan', [pelanggancontroller::class, 'tampilpelanggan']);
-Route::get('/delete/{id}', [pelanggancontroller::class, 'deletepelanggan']);
-Route::get('/tambah', [pelanggancontroller::class, 'tambahpelanggan']);
-Route::post('/tambah', [pelanggancontroller::class, 'prosespelanggan']);
-Route::post('/update/{id}', [pelanggancontroller::class, 'proses_update_pelanggan']);
-Route::get('/update/{id}', [pelanggancontroller::class, 'update_pelanggan']);
+Route::get('pelanggan/delete/{id}', [pelanggancontroller::class, 'deletepelanggan']);
+Route::get('/pelanggan/tambah', [pelanggancontroller::class, 'prosespelanggan']);
+Route::post('/pelanggan/tambah', [pelanggancontroller::class, 'tambahpelanggan']);
+Route::post('/updatepelanggan/{id}', [pelanggancontroller::class, 'proses_update_pelanggan']);
+Route::get('/updatepelanggan/{id}', [pelanggancontroller::class, 'update_pelanggan']);
 
 //DATA PENJUALAN
 Route::get('/penjualan', [penjualancontroller::class, 'tampilpenjualan']);
-Route::get('/detail-penjualan/{id}', [penjualancontroller::class, 'detailpenjualan']);
-Route::post('/detailpenjualan/{id}', [penjualancontroller::class, 'detailpenjualan']);
+Route::get('penjualan/detailpenjualan/{id}', [penjualancontroller::class, 'detailpenjualan']);
+Route::post('penjualan/detailpenjualan/{id}', [penjualancontroller::class, 'proses_detailpenjualan']);
 
 
 // Route::get('/welcome', function () {

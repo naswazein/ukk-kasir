@@ -27,30 +27,39 @@ class produkcontroller extends Controller
     // $request->validate();
     // return Auth::user();
     // $isipengaduan = $request->isilaporan;
-    $tambahproduk = $request->NamaProduk;
-    $tambahharga = $request->Harga;
-    $tambahstok = $request->Stok;
+    $tambahproduk = $request->nama_produk;
+    $tambahharga = $request->harga;
+    $tambahstok = $request->stok;
+
+    // return ([$tambahproduk, $tambahharga, $tambahstok]);
 
     DB::table('produk')->insert([
         'NamaProduk' => $tambahproduk,
         'Harga' => $tambahharga,
         'Stok' => $tambahstok,
     ]);
-// return redirect('/tampilproduk');
+    return redirect('/produk');
     }
 
+    function update_produk($id)
+        {
+             $produk = DB::table('produk')->where('ProdukID' , $id)->first();
+            return view('updateproduk' , ['produk' => $produk]);
+        }
 
+        function proses_update_produk(Request $request, $id){
 
-    function update_produk(Request $request, $id){
+            $Nama_Produk = $request->NamaProduk;
+            $Harga = $request->Harga;
+            $Stok = $request->Stok;
 
-        return $request;
-        $stok = $request->stok;
+        // return ([$Nama_Produk, $Harga, $Stok]);
 
-        DB::table('produk')
-        ->where('ProdukID' , $id)
-        ->update(['stok' => $stok]);
+            DB::table('produk')
+            ->where('ProdukID' , $id)
+            ->update(['NamaProduk' => $Nama_Produk, 'Harga' => $Harga, 'Stok' => $Stok]);
 
-    return redirect('/tampilproduk');
-    }
+        return redirect('/produk');
+        }
 }
 

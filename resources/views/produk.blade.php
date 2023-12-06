@@ -27,7 +27,7 @@
             <td class="table-info">{{$produk->Stok}}</td>
 
         <td>
-            <a type="button"class="btn btn-danger" href={{url("/delete/$produk->ProdukID")}}>Delete</a>
+            <a type="button"class="btn btn-danger" href={{url("/produk/delete/$produk->ProdukID")}}>Delete</a>
             <a type="button"class="btn btn-success" href={{url("/updateproduk/$produk->ProdukID")}}>Update</a>
             </td
             </form>

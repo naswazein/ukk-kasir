@@ -12,7 +12,9 @@ class penjualancontroller extends Controller
     function tampilpenjualan()
     {
         $judul = "Selamat Datang";
-        $penjualan = DB::table('penjualan')->get();
+        $penjualan = DB::table('penjualan')
+        ->join('pelanggan' , 'penjualan.PenjualanID', '=', 'pelanggan.PelangganID')
+        ->get();
 
        // $penjualan = DB::where('Id' , Auth::user()->id)->get();
         return view('datapenjualan' , ['judul' => $judul, 'penjualan' => $penjualan]);
@@ -21,15 +23,27 @@ class penjualancontroller extends Controller
         // {
         //  echo "Tampillll";
         // }
-        function detail($id)
+        function detailpenjualan($id)
     {
         echo $id;
     }
-    function detailpenjualan($id)
+    function detailpengaduanP($id)
     {
-        $petugas = DB::table('penjualan')
-            ->where('PenjualanID', $id)
+        $petugas = DB::table('pengaduan')
+            ->where('id_pengaduan', $id)
             ->first();
-        return view('detailpenjualan', ['penjualan' => $id]);
+        return view('detailpengaduanP', ['pengaduan' => $petugas]);
     }
+    // function detailpengaduan($id)
+    // {
+    //     $pengaduan = pengaduan::where('id_pengaduan', $id)->first();
+    //     //$tanggapan = tanggapan::where('id_pengaduan' , $id)->get();
+    //     $tanggapan = DB::table('tanggapan')
+    //         ->join('petugas', 'petugas.id', '=', 'tanggapan.id_petugas')
+    //         ->where('tanggapan.id_pengaduan', $id)
+    //         ->get();
+
+    //     //return $tanggapan;
+    //     return view('detailpengaduanP', ['data' => $pengaduan]);
+    // }
 }

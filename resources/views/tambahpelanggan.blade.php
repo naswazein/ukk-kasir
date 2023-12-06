@@ -13,16 +13,16 @@
       @csrf
       <div class="container">
       <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Nama Produk</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name Produk" name="nama_produk">
+        <label for="formGroupExampleInput" class="form-label">Nama</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name" name="nama_pelanggan">
       </div>
       <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Harga</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter The Price" name="harga">
+        <label for="formGroupExampleInput2" class="form-label">Alamat</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter The Adress" name="alamat">
       </div>
       <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Stok</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter The Stock" name="stok">
+        <label for="formGroupExampleInput2" class="form-label">No Telp</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Phone Number" name="no_telp">
       </div>
       <div class="d-grid gap-2 col-4 mx-auto">
         <br>

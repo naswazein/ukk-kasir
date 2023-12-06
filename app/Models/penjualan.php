@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class produk extends Model
+class penjualan extends Model
 {
     use HasFactory;
     public $timestamp = false;
-    protected $table = "produk";
+    protected $table = "penjualan";
 
-    protected $fillable = ['ProdukID' , 'NamaProduk' , 'Harga' , 'Stok'];
+    protected $fillable = ['PenjualanID' , 'TanggalPenjualan' , 'TotalHarga' , 'PelangganID'];
 
 }

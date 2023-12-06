@@ -22,19 +22,19 @@
       @foreach($pelanggan as $pelanggan)
         <tbody>
         <tr>
-            <td class="table-info">{{$pelanggan->NamaPelanggan}}</td>
-            <td class="table-info">{{$pelanggan->Alamat}}</td>
-            <td class="table-info">{{$pelanggan->NomorTelepon}}</td>
+            <td class="">{{$pelanggan->NamaPelanggan}}</td>
+            <td class="">{{$pelanggan->Alamat}}</td>
+            <td class="">{{$pelanggan->NomorTelepon}}</td>
           <td>
-            <a type="button"class="btn btn-danger" href={{url("/delete/$pelanggan->PelangganID")}}>Delete</a>
-            <a type="button"class="btn btn-primary" href={{url("/tambahpelanggan/$pelanggan->PelangganID")}}>Tambah</a>
-            <a type="button"class="btn btn-success" href={{url("/update/$pelanggan->PelangganID")}}>Update</a>
+            <a type="button"class="btn btn-danger" href={{url("/pelanggan/delete/$pelanggan->PelangganID")}}>Delete</a>
+            <a type="button"class="btn btn-success" href={{url("/updatepelanggan/$pelanggan->PelangganID")}}>Update</a>
           </td
             </form>
           </td>
         </tbody>
       @endforeach
     </table>
+    <a type="button"class="btn btn-primary" href={{url("/pelanggan/tambah")}}>Tambah</a>
   </div>
 </body>
 </html>

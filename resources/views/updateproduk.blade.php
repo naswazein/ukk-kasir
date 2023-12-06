@@ -32,7 +32,7 @@
                 <div>{{ $message }}</div>
             @enderror
             <label for="exampleFormControlTextarea1" class="form-label">Stok</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="stok" required>{{ $produk->Stok }}</textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Stok" required>{{ $produk->Stok }}</textarea>
             @error('stok')
                 <div>{{ $message }}</div>
             @enderror

@@ -15,7 +15,7 @@
         <br>
         <tr>
             <th scope="col" class="table-danger">Tanggal Penjualan</th>
-            <th scope="col" class="table-danger">Pelanggan Id</th>
+            <th scope="col" class="table-danger">Nama Pelanggan</th>
             <th scope="col" class="table-danger">Total Harga</th>
             <th scope="col" class="table-danger">Opsi</th>
         </tr>
@@ -24,7 +24,7 @@
         <tbody>
         <tr>
             <td class="table-info">{{$penjualan->TanggalPenjualan}}</td>
-            <td class="table-info">{{$penjualan->PelangganID}}</td>
+            <td class="table-info">{{$penjualan->NamaPelanggan}}</td>
             <td class="table-info">{{$penjualan->TotalHarga}}</td>
           <td>
             <a type="button"class="btn btn-secondary" href={{url("/detailpenjualan/$penjualan->PenjualanID")}}>Detail</a>
